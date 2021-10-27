@@ -14,9 +14,18 @@ namespace AdresDefteri
          */
 
         //Fields
+        #region Fields
 
         private string _ad;
         private string _soyad;
+        private string _tckn;
+        //private DateTime _dogumTarihi;
+
+
+
+        #endregion
+
+
 
         //encapsulation
 
@@ -74,7 +83,44 @@ namespace AdresDefteri
                 _soyad = value;
             }
         }
+        public string Tckn
+        {
+            set
+            {
+                if (value.Length != 11)
+                {
+                    throw new Exception("TCKN 11 haneli olmalıdır");
+                }
+                foreach (char harf in value)
+                    if (!char.IsDigit(harf))
+                        throw new Exception("TCKN sadece rakamlardan oluşabilir");
+                int ilk = int.Parse(value.Substring(0, 1));
+                int son = int.Parse(value.Substring(10, 1));
 
+                if (ilk == 0)
+                    throw new Exception("TCKN 0 İLE BAŞLAYAMAZ !!");
+                if (son % 2 == 1)
+                    throw new Exception("TCKN son rakamı çift olmalıdır");
+
+                _tckn = value;
+
+
+            }
+            get
+            {
+
+                return _tckn;
+            }
+        }
+        public DateTime DogumTarihi { get; set; }
+
+        public int Yas 
+        {
+            get
+            {
+                return DateTime.Now.Year - this.DogumTarihi.Year;
+            }
+        }
     }
     interface IKisi { }
 

@@ -33,7 +33,7 @@ namespace AdresDefteri
 
 
 
-        //encapsulation
+        //encapsulationnnnnnnnnnnnnnn
 
         public string Ad
         {

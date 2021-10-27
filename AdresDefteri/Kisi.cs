@@ -13,6 +13,12 @@ namespace AdresDefteri
          * *internal protected 
          */
 
+        //constructor
+        public Kisi()
+        {
+            this.OlusturulmaZamani = DateTime.Now;
+        }
+
         //Fields
         #region Fields
 
@@ -121,6 +127,7 @@ namespace AdresDefteri
                 return DateTime.Now.Year - this.DogumTarihi.Year;
             }
         }
+        public DateTime OlusturulmaZamani { get; private set; }
 
         public override string ToString()
         {

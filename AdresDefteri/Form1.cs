@@ -9,7 +9,7 @@ namespace AdresDefteri
     {
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent() ;
         }
 
         Kisi kisi = new Kisi();

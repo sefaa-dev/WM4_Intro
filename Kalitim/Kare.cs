@@ -9,15 +9,15 @@ namespace Kalitim
 
     public class Kare : Sekil 
     {    
-            public Kare(double x)
+            public Kare(double x) : base(x)
             {
-                this.X = x;
+               
             }
 
-            public Kare()
-            {
+            //public Kare()
+            //{
 
-            }
+            //}
 
         public override double AlanHesapla()
         {

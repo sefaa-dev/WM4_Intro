@@ -8,16 +8,16 @@ namespace Kalitim
 {
     public class Dikdortgen : Sekil
     {
-        public Dikdortgen(double x, double y)
+        public Dikdortgen(double x, double y) : base(x)
         {
-            this.X = x;
+      
             this.Y = y;
 
         }
-        public Dikdortgen()
-        {
+        //public Dikdortgen()
+        //{
 
-        }
+        //}
 
         public double Y { get; set; }
 

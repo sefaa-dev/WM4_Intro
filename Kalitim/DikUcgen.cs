@@ -8,7 +8,7 @@ namespace Kalitim
 {
     public class DikUcgen : Dikdortgen
     {
-        public DikUcgen(double x, double y) : base(x, y)
+        public DikUcgen(double x,double y) : base(x, y)
         {
 
         }

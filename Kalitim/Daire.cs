@@ -6,30 +6,31 @@ using System.Threading.Tasks;
 
 namespace Kalitim
 {
-    public class Daire
+    public class Daire : Sekil
     {
         public Daire()
         {
 
         }
-        public Daire(double r)
+        public Daire(double x)
         {
-            this.R = r;
-        }
-        
-        public double R { get; set; }
-
-        public double AlanHesapla() {
-            return Math.Pow(R, 2) * Math.PI;
-        }
-        public double CevreHesapla()
-        {
-            return 2 * Math.PI * R;
+            this.X = X;
         }
 
-        public double KosegenHesapla()
+        public override double AlanHesapla()
         {
-            return 2 * R;
+            return Math.Pow(X, 2) * Math.PI;
         }
+
+        public override double CevreHesapla()
+        {
+            return 2 * Math.PI * X;
+        }
+
+        public override double KosegenHesapla()
+        {
+            return 2 * X;
+        }
+
     }
 }

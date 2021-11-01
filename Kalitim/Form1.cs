@@ -19,8 +19,14 @@ namespace Kalitim
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Kare k1 = new Kare();
+            Kare k1 = new Kare(10);
+            k1.X = 10;
             double kareAlani = k1.AlanHesapla();
+            MessageBox.Show("Karenin Alanı: " + kareAlani);
+
+            Dikdortgen d1 = new Dikdortgen(3, 4);
+            double dikdortgenAlani = d1.AlanHesapla();
+            MessageBox.Show("Dikdörthen Alani: " + dikdortgenAlani);
         }
     }
 }

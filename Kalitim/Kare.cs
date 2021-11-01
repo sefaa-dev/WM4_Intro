@@ -23,6 +23,11 @@ namespace Kalitim
         {
             return X * X;
         }
+
+        public override string ToString()
+        {
+            return "Kare" + AlanHesapla() + "br²" ;
+        }
     }
 
     }

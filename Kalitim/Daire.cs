@@ -31,6 +31,10 @@ namespace Kalitim
         {
             return 2 * X;
         }
+        public override string ToString()
+        {
+            return "Daire" + Math.Round(AlanHesapla(),2) + "br²";
+        }
 
     }
 }

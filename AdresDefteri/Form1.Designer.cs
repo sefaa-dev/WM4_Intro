@@ -40,6 +40,7 @@ namespace AdresDefteri
             this.lstKisiler = new System.Windows.Forms.ListBox();
             this.dtpDogumTarihi = new System.Windows.Forms.DateTimePicker();
             this.btnGuncelle = new System.Windows.Forms.Button();
+            this.slBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -117,6 +118,7 @@ namespace AdresDefteri
             this.lstKisiler.Name = "lstKisiler";
             this.lstKisiler.Size = new System.Drawing.Size(251, 379);
             this.lstKisiler.TabIndex = 9;
+            this.lstKisiler.SelectedIndexChanged += new System.EventHandler(this.lstKisiler_SelectedIndexChanged);
             // 
             // dtpDogumTarihi
             // 
@@ -129,18 +131,30 @@ namespace AdresDefteri
             // 
             this.btnGuncelle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnGuncelle.ForeColor = System.Drawing.Color.Red;
-            this.btnGuncelle.Location = new System.Drawing.Point(201, 237);
+            this.btnGuncelle.Location = new System.Drawing.Point(268, 261);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(98, 52);
             this.btnGuncelle.TabIndex = 11;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
+            // 
+            // slBtn
+            // 
+            this.slBtn.Location = new System.Drawing.Point(268, 342);
+            this.slBtn.Name = "slBtn";
+            this.slBtn.Size = new System.Drawing.Size(98, 49);
+            this.slBtn.TabIndex = 12;
+            this.slBtn.Text = "SİL";
+            this.slBtn.UseVisualStyleBackColor = true;
+            this.slBtn.Click += new System.EventHandler(this.slBtn_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 408);
+            this.Controls.Add(this.slBtn);
             this.Controls.Add(this.btnGuncelle);
             this.Controls.Add(this.dtpDogumTarihi);
             this.Controls.Add(this.lstKisiler);
@@ -174,6 +188,7 @@ namespace AdresDefteri
         private System.Windows.Forms.ListBox lstKisiler;
         private System.Windows.Forms.DateTimePicker dtpDogumTarihi;
         private System.Windows.Forms.Button btnGuncelle;
+        private System.Windows.Forms.Button slBtn;
     }
 }
 

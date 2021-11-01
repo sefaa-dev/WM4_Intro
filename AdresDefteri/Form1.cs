@@ -49,7 +49,7 @@ namespace AdresDefteri
 
 
             }
-            catch (Exception ex)
+            catch (Exception  ex)
             {
 
                 MessageBox.Show(ex.Message, "Bir hata oluştu", MessageBoxButtons.OK, MessageBoxIcon.Error);

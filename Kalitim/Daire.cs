@@ -36,5 +36,10 @@ namespace Kalitim
             return "Daire" + Math.Round(AlanHesapla(),2) + "br²";
         }
 
+        public double cap() 
+        {
+            return 2 * X;
+        }
+
     }
 }

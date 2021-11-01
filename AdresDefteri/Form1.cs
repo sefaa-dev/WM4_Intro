@@ -9,7 +9,7 @@ namespace AdresDefteri
     {
         public Form1()
         {
-            InitializeComponent() ;
+            InitializeComponent();
         }
 
         Kisi kisi = new Kisi();
@@ -40,15 +40,23 @@ namespace AdresDefteri
                 yeniKisi.DogumTarihi = dtpDogumTarihi.Value;
                 yeniKisi.Tckn = txtTckn.Text;
 
+                
+
                 kisiler.Add(yeniKisi);
                 lstKisiler.Items.Add(yeniKisi);
+
+               
+
+
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message,"Bir hata oluştu",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                
+                MessageBox.Show(ex.Message, "Bir hata oluştu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
             }
+            
         }
     }
 }

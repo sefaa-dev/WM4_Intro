@@ -39,6 +39,7 @@ namespace AdresDefteri
             this.btnKaydet = new System.Windows.Forms.Button();
             this.lstKisiler = new System.Windows.Forms.ListBox();
             this.dtpDogumTarihi = new System.Windows.Forms.DateTimePicker();
+            this.btnGuncelle = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -100,9 +101,9 @@ namespace AdresDefteri
             // 
             // btnKaydet
             // 
-            this.btnKaydet.Location = new System.Drawing.Point(40, 237);
+            this.btnKaydet.Location = new System.Drawing.Point(12, 237);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(382, 81);
+            this.btnKaydet.Size = new System.Drawing.Size(170, 103);
             this.btnKaydet.TabIndex = 8;
             this.btnKaydet.Text = "KAYDET";
             this.btnKaydet.UseVisualStyleBackColor = true;
@@ -124,11 +125,23 @@ namespace AdresDefteri
             this.dtpDogumTarihi.Size = new System.Drawing.Size(200, 23);
             this.dtpDogumTarihi.TabIndex = 10;
             // 
+            // btnGuncelle
+            // 
+            this.btnGuncelle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnGuncelle.ForeColor = System.Drawing.Color.Red;
+            this.btnGuncelle.Location = new System.Drawing.Point(201, 237);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(98, 52);
+            this.btnGuncelle.TabIndex = 11;
+            this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 408);
+            this.Controls.Add(this.btnGuncelle);
             this.Controls.Add(this.dtpDogumTarihi);
             this.Controls.Add(this.lstKisiler);
             this.Controls.Add(this.btnKaydet);
@@ -160,6 +173,7 @@ namespace AdresDefteri
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.ListBox lstKisiler;
         private System.Windows.Forms.DateTimePicker dtpDogumTarihi;
+        private System.Windows.Forms.Button btnGuncelle;
     }
 }
 

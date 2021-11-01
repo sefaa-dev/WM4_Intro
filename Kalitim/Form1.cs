@@ -49,6 +49,19 @@ namespace Kalitim
             //Sekil seciliSekil = lstSekiller.SelectedItem as Sekil;
             Sekil seciliSekil = (Sekil)lstSekiller.SelectedItem;
 
+            if (seciliSekil is Kare)
+            {
+
+            }
+            else if (seciliSekil is Dikdortgen)
+            {
+
+            }
+            else if (seciliSekil is Daire dd)
+            {
+                this.Text = dd.cap().ToString();
+            }
+
             lblDetay.Text =
                 $"Alan: {seciliSekil.AlanHesapla()}\nÇevresi: {seciliSekil.CevreHesapla()}\nKöşegen Uzunluğu:{seciliSekil.KosegenHesapla()}";
 

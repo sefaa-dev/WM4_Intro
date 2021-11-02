@@ -17,7 +17,7 @@ namespace AdresDefteri
 
         private void Form1_Load(object sender, System.EventArgs e)
         {
-            //try
+            // try
             //{
             //    kisi.Ad = "Kamil";
             //    kisi.Soyad = "³Fıdıl";

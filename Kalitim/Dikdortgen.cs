@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Kalitim
 {
@@ -10,15 +6,13 @@ namespace Kalitim
     {
         public Dikdortgen(double x, double y) : base(x)
         {
-      
             this.Y = y;
-
         }
+
         //public Dikdortgen()
         //{
 
         //}
-
         public double Y { get; set; }
 
         public override double AlanHesapla()
@@ -37,11 +31,7 @@ namespace Kalitim
         }
         public override string ToString()
         {
-            return "Dikdörtgen" + AlanHesapla() + "br²";
+            return "Dikdörtgen " + AlanHesapla() + "br²";
         }
-
-
-
     }
-    }
-
+}

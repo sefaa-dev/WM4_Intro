@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Kalitim
 {
@@ -12,9 +8,9 @@ namespace Kalitim
         //{
 
         //}
-        public Daire(double x) :base(x)
+
+        public Daire(double x) : base(x)
         {
-          
         }
 
         public override double AlanHesapla()
@@ -31,15 +27,14 @@ namespace Kalitim
         {
             return 2 * X;
         }
-        public override string ToString()
-        {
-            return "Daire" + Math.Round(AlanHesapla(),2) + "br²";
-        }
 
-        public double cap() 
+        public double Cap()
         {
             return 2 * X;
         }
-
+        public override string ToString()
+        {
+            return "Daire " + Math.Round(AlanHesapla(), 2) + "br²";
+        }
     }
 }

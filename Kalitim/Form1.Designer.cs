@@ -36,27 +36,27 @@ namespace Kalitim
             // lstSekiller
             // 
             this.lstSekiller.FormattingEnabled = true;
-            this.lstSekiller.ItemHeight = 15;
+            this.lstSekiller.ItemHeight = 20;
             this.lstSekiller.Location = new System.Drawing.Point(12, 12);
             this.lstSekiller.Name = "lstSekiller";
-            this.lstSekiller.Size = new System.Drawing.Size(122, 319);
+            this.lstSekiller.Size = new System.Drawing.Size(182, 424);
             this.lstSekiller.TabIndex = 0;
             this.lstSekiller.SelectedIndexChanged += new System.EventHandler(this.lstSekiller_SelectedIndexChanged);
             // 
             // lblDetay
             // 
             this.lblDetay.AutoSize = true;
-            this.lblDetay.Location = new System.Drawing.Point(140, 12);
+            this.lblDetay.Location = new System.Drawing.Point(200, 12);
             this.lblDetay.Name = "lblDetay";
-            this.lblDetay.Size = new System.Drawing.Size(50, 15);
+            this.lblDetay.Size = new System.Drawing.Size(65, 20);
             this.lblDetay.TabIndex = 1;
             this.lblDetay.Text = "lblDetay";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(694, 338);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblDetay);
             this.Controls.Add(this.lstSekiller);
             this.Name = "Form1";

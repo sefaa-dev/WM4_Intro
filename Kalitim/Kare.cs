@@ -1,23 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Kalitim   
+﻿namespace Kalitim
 {
+    public class Kare : Sekil
+    {
+        public Kare(double x) : base(x)
+        {
 
-    public class Kare : Sekil 
-    {    
-            public Kare(double x) : base(x)
-            {
-               
-            }
+        }
 
-            //public Kare()
-            //{
+        //public Kare()
+        //{
 
-            //}
+        //}
 
         public override double AlanHesapla()
         {
@@ -26,9 +19,7 @@ namespace Kalitim
 
         public override string ToString()
         {
-            return "Kare" + AlanHesapla() + "br²" ;
+            return "Kare " + AlanHesapla() + "br²";
         }
     }
-
-    }
-
+}

@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Kalitim
 {
     public abstract class Sekil
     {
-        public Sekil(double X)
+        public Sekil(double x)
         {
-            this.X = X;
+            this.X = x;
         }
-
-
 
         private double _x;
 
@@ -24,17 +18,18 @@ namespace Kalitim
             set
             {
                 if (value <= 0)
-                    throw new Exception("X 0' dan büyük olmalıdır");
+                    throw new Exception("X 0'dan büyük olmalıdır");
                 _x = value;
-                
-
-                }
             }
+        }
 
         public abstract double AlanHesapla();
-        public virtual double CevreHesapla() {
+
+        public virtual double CevreHesapla()
+        {
             return 4 * X;
         }
+
         public virtual double KosegenHesapla()
         {
             return Math.Sqrt(2) * X;

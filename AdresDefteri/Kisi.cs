@@ -21,19 +21,13 @@ namespace AdresDefteri
 
         //Fields
         #region Fields
-
         private string _ad;
         private string _soyad;
         private string _tckn;
         //private DateTime _dogumTarihi;
-
-
-
         #endregion
 
-
-
-        //encapsulationnnnnnnnnnnnnnn
+        //encapsulation
 
         public string Ad
         {
@@ -89,49 +83,46 @@ namespace AdresDefteri
                 _soyad = value;
             }
         }
+
         public string Tckn
         {
             set
             {
                 if (value.Length != 11)
-                {
-                    throw new Exception("TCKN 11 haneli olmalıdır");
-                }
+                    throw new Exception("TCKN 11 haneli olmalıdır!");
+
                 foreach (char harf in value)
                     if (!char.IsDigit(harf))
                         throw new Exception("TCKN sadece rakamlardan oluşabilir");
+
                 int ilk = int.Parse(value.Substring(0, 1));
                 int son = int.Parse(value.Substring(10, 1));
 
                 if (ilk == 0)
-                    throw new Exception("TCKN 0 İLE BAŞLAYAMAZ !!");
+                    throw new Exception("TCKN 0 ile başlayamaz!");
                 if (son % 2 == 1)
-                    throw new Exception("TCKN son rakamı çift olmalıdır");
+                    throw new Exception("TCKN son rakamı çift olmalıdır!");
 
                 _tckn = value;
-
-
             }
-            get
-            {
+            get { return _tckn; }
+        } //full property
 
-                return _tckn;
-            }
-        }
-        public DateTime DogumTarihi { get; set; }
+        public DateTime DogumTarihi { get; set; } //auto property
 
-        public int Yas 
+        public int Yas
         {
             get
             {
                 return DateTime.Now.Year - this.DogumTarihi.Year;
             }
         }
+
         public DateTime OlusturulmaZamani { get; private set; }
 
         public override string ToString()
         {
-            return $"{this.Ad} {this.Soyad} - {this.Yas} / {this.Tckn}";
+            return $"{this.Ad} {this.Soyad} - {this.Yas}";
         }
     }
     interface IKisi { }

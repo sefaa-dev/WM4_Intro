@@ -19,17 +19,14 @@ namespace Kalitim
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Kare k1 = new Kare(10);
-            Kare k2 = new Kare(5);
-         
-            Dikdortgen d1 = new Dikdortgen(3, 4);
-            Dikdortgen d2 = new Dikdortgen(5, 12);
-
-            Daire da1 = new Daire(7);
-            Daire da2 = new Daire(8);
-
-            DikUcgen u1 = new DikUcgen(6, 8);
-            DikUcgen u2 = new DikUcgen(10, 24);
+            Sekil k1 = new Kare(10);
+            Sekil k2 = new Kare(5);
+            Sekil d1 = new Dikdortgen(3, 4);
+            Sekil d2 = new Dikdortgen(5, 12);
+            Sekil da1 = new Daire(7);
+            Sekil da2 = new Daire(8);
+            Sekil u1 = new DikUcgen(6, 8);
+            Sekil u2 = new DikUcgen(10, 24);
 
             lstSekiller.Items.Add(k1);
             lstSekiller.Items.Add(k2);
@@ -39,7 +36,6 @@ namespace Kalitim
             lstSekiller.Items.Add(da2);
             lstSekiller.Items.Add(u1);
             lstSekiller.Items.Add(u2);
-
         }
 
         private void lstSekiller_SelectedIndexChanged(object sender, EventArgs e)
@@ -55,17 +51,16 @@ namespace Kalitim
             }
             else if (seciliSekil is Dikdortgen)
             {
-
+                Dikdortgen dd = seciliSekil as Dikdortgen;
+                
             }
             else if (seciliSekil is Daire dd)
             {
-                this.Text = dd.cap().ToString();
+                this.Text = dd.Cap().ToString();
             }
 
             lblDetay.Text =
-                $"Alan: {seciliSekil.AlanHesapla()}\nÇevresi: {seciliSekil.CevreHesapla()}\nKöşegen Uzunluğu:{seciliSekil.KosegenHesapla()}";
-
-
+                $"Alanı: {seciliSekil.AlanHesapla()}\nÇevresi: {seciliSekil.CevreHesapla()}\nKöşegen Uzunluğu:{seciliSekil.KosegenHesapla()}";
         }
     }
 }

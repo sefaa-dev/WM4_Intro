@@ -17,18 +17,19 @@ namespace AdresDefteri
 
         private void Form1_Load(object sender, System.EventArgs e)
         {
-            // try
+            //try
             //{
             //    kisi.Ad = "Kamil";
             //    kisi.Soyad = "³Fıdıl";
-            //    kisi.DogumTarihi = new DateTime(1998, 5, 26);
+            //    kisi.DogumTarihi = new DateTime(1985, 5, 20);
             //}
             //catch (Exception ex)
             //{
-            // MessageBox.Show($"Bir hata oluştu: {ex.Message}");
+            //    MessageBox.Show($"Bir hata oluştu: {ex.Message}");
             //} // set
-            //MessageBox.Show($"Kişinin Yaşı: {kisi.Yas}"); //get
+            //MessageBox.Show($"Kişinin yaşı: {kisi.Yas}"); //get
         }
+
         private List<Kisi> kisiler = new List<Kisi>();
         private void btnKaydet_Click(object sender, EventArgs e)
         {
@@ -40,21 +41,16 @@ namespace AdresDefteri
                 yeniKisi.DogumTarihi = dtpDogumTarihi.Value;
                 yeniKisi.Tckn = txtTckn.Text;
 
-
-
                 kisiler.Add(yeniKisi);
-                //lstKisiler.Items.Add(yeniKisi);
+                //lstKisiler.Items.Add(yeniKisi.ToString());
                 ListeyiDoldur();
 
-
+                //yeniKisi.OlusturulmaZamani= DateTime.Now.AddDays(1);
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show(ex.Message, "Bir hata oluştu", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                MessageBox.Show(ex.Message, "Bir Hata Oluştu", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private void ListeyiDoldur()
@@ -66,20 +62,17 @@ namespace AdresDefteri
             }
         }
 
-
         private Kisi seciliKisi;
-
         private void lstKisiler_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lstKisiler.SelectedItem == null) return;
 
             seciliKisi = lstKisiler.SelectedItem as Kisi;
 
-            seciliKisi.Ad = txtAd.Text;
-            seciliKisi.Soyad = txtSoyad.Text;
-            seciliKisi.Tckn = txtTckn.Text;
-            seciliKisi.DogumTarihi = dtpDogumTarihi.Value;
-
+            txtAd.Text = seciliKisi.Ad;
+            txtSoyad.Text = seciliKisi.Soyad;
+            txtTckn.Text = seciliKisi.Tckn;
+            dtpDogumTarihi.Value = seciliKisi.DogumTarihi;
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
@@ -88,19 +81,16 @@ namespace AdresDefteri
 
             seciliKisi.Ad = txtAd.Text;
             seciliKisi.Soyad = txtSoyad.Text;
-            seciliKisi.Tckn = txtTckn.Text;
             seciliKisi.DogumTarihi = dtpDogumTarihi.Value;
-
-            
+            seciliKisi.Tckn = txtTckn.Text;
             ListeyiDoldur();
-
         }
 
-        private void slBtn_Click(object sender, EventArgs e)
+        private void btnSil_Click(object sender, EventArgs e)
         {
             if (seciliKisi == null) return;
 
-            DialogResult cevap = MessageBox.Show($"{seciliKisi} yi silmek istiyor musunuz ??", "Silme Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult cevap = MessageBox.Show($"{seciliKisi} yi silmek istiyor musunuz?", "Silme onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (cevap == DialogResult.Yes)
             {

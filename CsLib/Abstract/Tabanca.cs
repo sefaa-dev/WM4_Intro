@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,12 +12,14 @@ namespace CsLib.Abstract
 
 
         protected int _sarjorKapasitesi, _kalanFisek;
+        protected Stream _atisSesi, _bitikFisekSesi;
+
+
         public int SarjorKapasitesi => _sarjorKapasitesi; //redonly prop
         public int KalanFisek => _kalanFisek;
-
-
+        public Stream AtisSesi => _atisSesi;
+        public Stream BitikFisekSesi => _bitikFisekSesi;
         public abstract int AtesEt();
-
         public abstract int YenidenDoldur();
 
        

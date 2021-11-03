@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ namespace CsLib.Abstract
         public string Ulke { get; protected set; }
         public decimal Fiyat { get; protected set; }
         public int Hasar { get; protected set; }
+        public Stream SilahResim { get; protected set; }
+
         
     }
     public enum Silahlar : byte

@@ -12,13 +12,15 @@ namespace CsLib.Abstract
 
 
         protected int _sarjorKapasitesi, _kalanFisek;
-        protected Stream _atisSesi, _bitikFisekSesi;
+        protected Stream _atisSesi, _bitikFisekSesi,_yenidenDoldurmaSesi;
 
 
         public int SarjorKapasitesi => _sarjorKapasitesi; //redonly prop
         public int KalanFisek => _kalanFisek;
         public Stream AtisSesi => _atisSesi;
         public Stream BitikFisekSesi => _bitikFisekSesi;
+        public Stream YenidenDoldurması => _yenidenDoldurmaSesi;
+
         public abstract int AtesEt();
         public abstract int YenidenDoldur();
 

@@ -1,13 +1,8 @@
-﻿using CsLib.Abstract;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
+﻿using System.IO;
 using System.Threading;
-using System.Threading.Tasks;
+using Cs.Lib.Abstracts;
 
-namespace CsLib.Concrete
+namespace Cs.Lib.Concrete
 {
     public sealed class Glock : Tabanca
     {
@@ -17,14 +12,12 @@ namespace CsLib.Concrete
             this.Ulke = "Avusturya";
             this.Hasar = 24;
             this.Fiyat = 200m;
-            this._kalanFisek = this._sarjorKapasitesi;
+            this._kalanFisek = this.SarjorKapasitesi;
             this.SilahResim = new MemoryStream(Properties.Resources.Glock);
             this._atisSesi = Properties.Resources.Glock_Ates;
             this._bitikFisekSesi = Properties.Resources.Bitik_Mermi_Sesi;
             this._yenidenDoldurmaSesi = Properties.Resources.Glock_Reload;
-            
         }
-
         public override int AtesEt()
         {
             if (KalanFisek != 0)

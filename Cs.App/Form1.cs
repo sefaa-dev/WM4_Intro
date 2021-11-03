@@ -1,9 +1,11 @@
 ﻿using Cs.Lib.Abstracts;
+using Cs.Lib.Concrete;
 using System;
 using System.Drawing;
 using System.Media;
+using System.Threading;
 using System.Windows.Forms;
-using Cs.Lib.Concrete;
+using Timer = System.Windows.Forms.Timer;
 
 namespace Cs.App
 {
@@ -17,9 +19,17 @@ namespace Cs.App
         private void Form1_Load(object sender, EventArgs e)
         {
             cmbSilahlar.DataSource = Enum.GetNames(typeof(Silahlar));
+            tmrSeri.Tick += TmrSeri_Tick;
+        }
+
+        private void TmrSeri_Tick(object sender, EventArgs e)
+        {
+            btnAtesEt.PerformClick();
+            Thread.Sleep(500);
         }
 
         private Silah silah;
+        private Timer tmrSeri = new Timer();
         private void cmbSilahlar_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbSilahlar.SelectedItem == null) return;
@@ -38,6 +48,7 @@ namespace Cs.App
                 case Silahlar.DesertEagle:
                     break;
                 case Silahlar.AK47:
+                    silah = new Ak47();
                     break;
                 case Silahlar.M4A1S:
                     break;
@@ -70,7 +81,7 @@ namespace Cs.App
                 gbFirlatilan.Visible = false;
                 gbYakinSaldiri.Visible = true;
             }
-
+            panelSilah.Controls.Clear();
             PictureBox pbBox = new PictureBox();
             pbBox.Image = Image.FromStream(silah.SilahResim);
             pbBox.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -107,49 +118,21 @@ namespace Cs.App
             player.Play();
         }
 
-        private void btnFırlat_Click(object sender, EventArgs e)
+        private void btnAtesEt_MouseDown(object sender, MouseEventArgs e)
         {
-
+            if (silah is ISeriAtabilir ss)
+            {
+                tmrSeri.Interval = ss.AtisKatsayisi;
+                tmrSeri.Start();
+            }
         }
 
-        private void gbYakinSaldiri_Enter(object sender, EventArgs e)
+        private void btnAtesEt_MouseUp(object sender, MouseEventArgs e)
         {
-
-        }
-
-        private void btnSaldir_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gb_AtesliSilah_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblDurum_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblDetay_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelSilah_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void gbFirlatilan_Enter(object sender, EventArgs e)
-        {
-
+            if (silah is ISeriAtabilir)
+            {
+                tmrSeri.Stop();
+            }
         }
     }
 }

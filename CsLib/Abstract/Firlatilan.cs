@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace CsLib.Abstract
 {
-   public interface IAtesEdebilen
+    public abstract class Firlatilan : Silah, IFirlatilabilen
     {
-        int AtesEt();
+        
+
+        public abstract int Firlat();
     }
 }

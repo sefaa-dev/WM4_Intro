@@ -6,18 +6,20 @@ using System.Threading.Tasks;
 
 namespace CsLib.Abstract
 {
-    public abstract class Tabanca : Silah, IAtesEdebilen, ISarjorlu
+    public abstract class Tufek : Silah, ISarjorlu, IAtesEdebilen, ISeriAtabilir
     {
+        protected int _sarjorKapasitesi, _kalanFisek, _atisKatsayisi;
 
-
-        protected int _sarjorKapasitesi, _kalanFisek;
+        public int AtisKatsayisi => _atisKatsayisi;
         public int SarjorKapasitesi => _sarjorKapasitesi; //redonly prop
         public int KalanFisek => _kalanFisek;
 
-
-        public abstract void AtesEt();
+        public abstract int AtesEt();
 
         public abstract int YenidenDoldur();
-        
+
+
+
+
     }
 }

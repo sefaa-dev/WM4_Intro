@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace CsLib.Abstract
 {
-   public interface IAtesEdebilen
+    public interface IFirlatilabilen
     {
-        int AtesEt();
+        int Firlat();
+
     }
 }

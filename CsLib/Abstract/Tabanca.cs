@@ -15,9 +15,10 @@ namespace CsLib.Abstract
         public int KalanFisek => _kalanFisek;
 
 
-        public abstract void AtesEt();
+        public abstract int AtesEt();
 
         public abstract int YenidenDoldur();
-        
+
+       
     }
 }

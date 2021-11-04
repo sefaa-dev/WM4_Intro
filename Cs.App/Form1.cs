@@ -39,24 +39,31 @@ namespace Cs.App
             switch (seciliSilah)
             {
                 case Silahlar.Bıçak:
+                    silah = new Bicak();
                     break;
                 case Silahlar.USP:
+                    silah = new USP();
                     break;
                 case Silahlar.Glock:
                     silah = new Glock();
                     break;
                 case Silahlar.DesertEagle:
+                    silah = new DesertEagle();
                     break;
                 case Silahlar.AK47:
                     silah = new Ak47();
                     break;
                 case Silahlar.M4A1S:
+                    silah = new M4A1S();
                     break;
                 case Silahlar.AWP:
+                    silah = new AWP();
                     break;
                 case Silahlar.ElBombası:
+                    silah = new ElBombasi();
                     break;
                 case Silahlar.FlashBombası:
+                    silah = new FlashBombasi();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

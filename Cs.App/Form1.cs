@@ -141,5 +141,22 @@ namespace Cs.App
                 tmrSeri.Stop();
             }
         }
+
+        private void btnSaldir_Click(object sender, EventArgs e)
+        {
+            btnSaldir.Enabled = false;
+            (silah as IVurulabilir).Vur();
+            ///
+            btnSaldir.Enabled = true;
+            
+        }
+
+        private void btnFırlat_Click(object sender, EventArgs e)
+        {
+            btnFırlat.Enabled = false;
+            (silah as IFirlatilabilen).Firlat();
+            //////
+            btnFırlat.Enabled = true;
+        }
     }
 }

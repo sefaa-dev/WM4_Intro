@@ -55,15 +55,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kalitim", "Kalitim\Kalitim.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gün 7", "Gün 7", "{00C7F8F6-0500-4900-A84A-174250CAC841}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentMethod", "PaymentMethod\PaymentMethod.csproj", "{EEDCB399-727B-4861-856C-F7C8171F27F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentMethod", "PaymentMethod\PaymentMethod.csproj", "{EEDCB399-727B-4861-856C-F7C8171F27F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentMethod.Models", "PaymentMethod.Models\PaymentMethod.Models.csproj", "{D72EFE94-DB24-4A14-AB2B-DBC9940F4459}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentMethod.Models", "PaymentMethod.Models\PaymentMethod.Models.csproj", "{D72EFE94-DB24-4A14-AB2B-DBC9940F4459}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gün 8", "Gün 8", "{2BAF8726-F893-438B-AA4F-AE125DBD5773}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cs.App", "Cs.App\Cs.App.csproj", "{398EEF5E-C406-4671-AD9E-DC8674360A4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cs.App", "Cs.App\Cs.App.csproj", "{398EEF5E-C406-4671-AD9E-DC8674360A4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cs.Lib", "Cs.Lib\Cs.Lib.csproj", "{D768BEE2-05BC-4834-AAC6-D98C91A8ADAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cs.Lib", "Cs.Lib\Cs.Lib.csproj", "{D768BEE2-05BC-4834-AAC6-D98C91A8ADAF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gün 9", "Gün 9", "{BDF661F3-07F7-4657-920B-4220E595903E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

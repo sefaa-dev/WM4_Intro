@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 
-namespace CsLib.Abstract
+namespace Cs.Lib.Abstracts
 {
     public abstract class Silah
     {
@@ -14,8 +8,6 @@ namespace CsLib.Abstract
         public decimal Fiyat { get; protected set; }
         public int Hasar { get; protected set; }
         public Stream SilahResim { get; protected set; }
-
-        
     }
     public enum Silahlar : byte
     {

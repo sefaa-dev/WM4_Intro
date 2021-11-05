@@ -45,6 +45,9 @@ namespace KisiEnvanteri
             this.dosyaİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dışarıAktarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.içeriAktarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.jSONDışarıAktarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.jSONİçeriAktarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pbResim)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -181,7 +184,10 @@ namespace KisiEnvanteri
             // 
             this.dosyaİşlemleriToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dışarıAktarToolStripMenuItem,
-            this.içeriAktarToolStripMenuItem});
+            this.içeriAktarToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.jSONDışarıAktarToolStripMenuItem,
+            this.jSONİçeriAktarToolStripMenuItem});
             this.dosyaİşlemleriToolStripMenuItem.Name = "dosyaİşlemleriToolStripMenuItem";
             this.dosyaİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
             this.dosyaİşlemleriToolStripMenuItem.Text = "Dosya İşlemleri";
@@ -196,8 +202,28 @@ namespace KisiEnvanteri
             // içeriAktarToolStripMenuItem
             // 
             this.içeriAktarToolStripMenuItem.Name = "içeriAktarToolStripMenuItem";
-            this.içeriAktarToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.içeriAktarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.içeriAktarToolStripMenuItem.Text = "İçeri Aktar";
+            this.içeriAktarToolStripMenuItem.Click += new System.EventHandler(this.içeriAktarToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // jSONDışarıAktarToolStripMenuItem
+            // 
+            this.jSONDışarıAktarToolStripMenuItem.Name = "jSONDışarıAktarToolStripMenuItem";
+            this.jSONDışarıAktarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.jSONDışarıAktarToolStripMenuItem.Text = "JSON Dışarı Aktar";
+            this.jSONDışarıAktarToolStripMenuItem.Click += new System.EventHandler(this.jSONDışarıAktarToolStripMenuItem_Click);
+            // 
+            // jSONİçeriAktarToolStripMenuItem
+            // 
+            this.jSONİçeriAktarToolStripMenuItem.Name = "jSONİçeriAktarToolStripMenuItem";
+            this.jSONİçeriAktarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.jSONİçeriAktarToolStripMenuItem.Text = "JSON İçeri Aktar";
+            this.jSONİçeriAktarToolStripMenuItem.Click += new System.EventHandler(this.jSONİçeriAktarToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -246,6 +272,9 @@ namespace KisiEnvanteri
         private System.Windows.Forms.ToolStripMenuItem dosyaİşlemleriToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dışarıAktarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem içeriAktarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem jSONDışarıAktarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem jSONİçeriAktarToolStripMenuItem;
     }
 }
 

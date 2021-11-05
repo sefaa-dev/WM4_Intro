@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 using System.Xml.Serialization;
 
 namespace KisiEnvanteri
@@ -108,7 +110,7 @@ namespace KisiEnvanteri
 
         private void dışarıAktarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveFileDialog dialog = new SaveFileDialog();        
+            SaveFileDialog dialog = new SaveFileDialog();
             dialog.Title = "Dışarı Aktar";
             dialog.Filter = "XML Format | *.xml";
             dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -120,12 +122,71 @@ namespace KisiEnvanteri
                 TextWriter writer = new StreamWriter(dialog.FileName);
                 serializer.Serialize(writer, kisiler);
                 writer.Close();
-
                 MessageBox.Show($"{kisiler.Count} adet kisi dışarı aktarıldı.");
 
-                
+
             }
 
+        }
+
+        private void içeriAktarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Multiselect = false;
+            dialog.Title = "Bir XML dosyası seçiniz";
+            dialog.Filter = "XML | *.xml";
+            dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+            DialogResult result = dialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(List<Kisi>));
+                XmlTextReader reader = new XmlTextReader(dialog.FileName);
+                kisiler = (List<Kisi>)serializer.Deserialize(reader);
+                MessageBox.Show($"{kisiler.Count} adet kisi içeri aktarıldı");
+                ListeyiDoldur();
+            }
+        }
+
+        private void jSONDışarıAktarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Title = "Dışarı Aktar";
+            dialog.Filter = "JSON Format | *.json";
+            dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+            DialogResult result = dialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                FileStream fileStream = new FileStream(dialog.FileName, FileMode.OpenOrCreate);
+                StreamWriter writer = new StreamWriter(fileStream);
+                writer.Write(JsonConvert.SerializeObject(kisiler));
+                writer.Close();
+                writer.Dispose();
+                MessageBox.Show($"{kisiler.Count} adet kişi dışarı aktarıldı");
+
+            }
+        }
+
+        private void jSONİçeriAktarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Multiselect = false;
+            dialog.Title = "Bir JSON dosyası seçiniz";
+            dialog.Filter = "JSON | *.json";
+            dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+            DialogResult result = dialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                FileStream fileStream = new FileStream(dialog.FileName, FileMode.Open);
+                StreamReader reader = new StreamReader(fileStream);
+                string dosyaIcerigi = reader.ReadToEnd();
+                kisiler = JsonConvert.DeserializeObject<List<Kisi>>(dosyaIcerigi);
+
+                MessageBox.Show($"{kisiler.Count} adet kisi içeri aktarıldı");
+                ListeyiDoldur();
+            }
         }
     }
 }

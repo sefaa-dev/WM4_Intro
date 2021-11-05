@@ -38,7 +38,7 @@ namespace KisiEnvanteri
             dialog.Filter = "Resim Dosyaları | *.jpeg; *.jpg";
             dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             DialogResult result = dialog.ShowDialog();
-            if(result == DialogResult.OK)
+            if (result == DialogResult.OK)
             {
                 pbResim.ImageLocation = dialog.FileName;
             }
@@ -89,6 +89,19 @@ namespace KisiEnvanteri
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
 
+            seciliKisi.Ad = txtAd.Text;
+            seciliKisi.Soyad = txtSoyad.Text;
+            seciliKisi.Telefon = txtTelefon.Text;
+
+            if (pbResim.Image != null)
+            {
+                MemoryStream resimStream = new MemoryStream();
+                pbResim.Image.Save(resimStream, ImageFormat.Jpeg);
+
+                seciliKisi.Fotograf = resimStream.ToArray();
+
+            }
+            ListeyiDoldur();
 
         }
     }

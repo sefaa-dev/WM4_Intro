@@ -89,6 +89,7 @@ namespace KisiEnvanteri
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
 
+
         }
     }
 }

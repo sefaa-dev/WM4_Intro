@@ -121,7 +121,7 @@ namespace KisiEnvanteri
                 serializer.Serialize(writer, kisiler);
                 writer.Close();
 
-                MessageBox.Show($"{kisiler.Count} adet kisi dışarı aktarıldı.");
+                MessageBox.Show($"{kisiler.Count} adet kisi dışarı aktarıldı. ");
 
                 
             }

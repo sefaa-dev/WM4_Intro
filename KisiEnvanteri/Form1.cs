@@ -104,5 +104,20 @@ namespace KisiEnvanteri
             ListeyiDoldur();
 
         }
+
+        private void dışarıAktarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();        
+            dialog.Title = "Dışarı Aktar";
+            dialog.Filter = "XML Format | *.xml";
+            dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+            DialogResult result = dialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+
+            }
+
+        }
     }
 }

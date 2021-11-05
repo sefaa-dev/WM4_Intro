@@ -189,8 +189,9 @@ namespace KisiEnvanteri
             // dışarıAktarToolStripMenuItem
             // 
             this.dışarıAktarToolStripMenuItem.Name = "dışarıAktarToolStripMenuItem";
-            this.dışarıAktarToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.dışarıAktarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dışarıAktarToolStripMenuItem.Text = "Dışarı Aktar";
+            this.dışarıAktarToolStripMenuItem.Click += new System.EventHandler(this.dışarıAktarToolStripMenuItem_Click);
             // 
             // içeriAktarToolStripMenuItem
             // 

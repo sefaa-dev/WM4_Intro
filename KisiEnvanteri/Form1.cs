@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace KisiEnvanteri
 {
@@ -115,7 +116,7 @@ namespace KisiEnvanteri
             DialogResult result = dialog.ShowDialog();
             if (result == DialogResult.OK)
             {
-
+                XmlSerializer serializer = new XmlSerializer();
             }
 
         }

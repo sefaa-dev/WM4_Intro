@@ -120,8 +120,7 @@ namespace KisiEnvanteri
                 TextWriter writer = new StreamWriter(dialog.FileName);
                 serializer.Serialize(writer, kisiler);
                 writer.Close();
-
-                MessageBox.Show($"{kisiler.Count} adet kisi dışarı aktarıldı. ");
+                MessageBox.Show($"{kisiler.Count} adet kisi dışarı aktarıldı.");
 
                 
             }

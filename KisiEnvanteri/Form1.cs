@@ -85,5 +85,10 @@ namespace KisiEnvanteri
                 pbResim.Image = Image.FromStream(stream);
             }
         }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

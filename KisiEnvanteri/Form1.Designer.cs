@@ -135,6 +135,7 @@ namespace KisiEnvanteri
             this.btnGuncelle.TabIndex = 9;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = false;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // dtpDogumTarihi
             // 

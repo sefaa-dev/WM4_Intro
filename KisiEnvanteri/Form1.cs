@@ -30,6 +30,7 @@ namespace KisiEnvanteri
             {
                 lstKisiler.Items.Add(kisi);
             }
+            KisiContext.Save();
         }
 
 
@@ -187,6 +188,13 @@ namespace KisiEnvanteri
                 MessageBox.Show($"{kisiler.Count} adet kisi içeri aktarıldı");
                 ListeyiDoldur();
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            KisiContext.Load();
+            this.kisiler = KisiContext.Kisiler;
+            ListeyiDoldur();
         }
     }
 }

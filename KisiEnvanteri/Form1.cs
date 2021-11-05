@@ -81,7 +81,8 @@ namespace KisiEnvanteri
 
             if (seciliKisi.Fotograf != null)
             {
-                pbResim.Image = Image.FromStream(new MemoryStream(seciliKisi.Fotograf));
+                MemoryStream stream = new MemoryStream(seciliKisi.Fotograf);
+                pbResim.Image = Image.FromStream(stream);
             }
         }
     }

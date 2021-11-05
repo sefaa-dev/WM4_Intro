@@ -116,7 +116,8 @@ namespace KisiEnvanteri
             DialogResult result = dialog.ShowDialog();
             if (result == DialogResult.OK)
             {
-                XmlSerializer serializer = new XmlSerializer();
+                XmlSerializer serializer = new XmlSerializer(typeof(List<Kisi>));
+                TextWriter writer = new StreamWriter(dialog.FileName);
             }
 
         }

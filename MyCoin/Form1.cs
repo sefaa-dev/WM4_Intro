@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -99,6 +100,20 @@ namespace MyCoin
             {
                 MessageBox.Show($"{ex.Message}");
             }
+        }
+
+        private void lblSymbol_Click(object sender, EventArgs e)
+        {
+            if (_seciliSymbol == null) return;
+
+            var binancaUrl = $"https://www.binance.com/tr/trade/{_seciliSymbol.symbol}";
+
+            ProcessStartInfo psInfo = new ProcessStartInfo
+            {
+                FileName = binancaUrl,
+                UseShellExecute = true
+            };
+            Process.Start(psInfo);
         }
     }
 }

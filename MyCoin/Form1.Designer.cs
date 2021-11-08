@@ -29,11 +29,13 @@ namespace MyCoin
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.txtAra = new System.Windows.Forms.TextBox();
             this.lblSymbol = new System.Windows.Forms.Label();
             this.lblFiyat = new System.Windows.Forms.Label();
             this.lblInfo = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // listBox1
@@ -85,6 +87,11 @@ namespace MyCoin
             this.lblInfo.TabIndex = 4;
             this.lblInfo.Text = "Info";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -110,6 +117,7 @@ namespace MyCoin
         private System.Windows.Forms.Label lblSymbol;
         private System.Windows.Forms.Label lblFiyat;
         private System.Windows.Forms.Label lblInfo;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

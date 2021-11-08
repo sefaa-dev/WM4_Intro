@@ -75,6 +75,17 @@ namespace MyCoin
             if (listBox1.SelectedItem == null) return;
             _seciliSymbol = listBox1.SelectedItem as Symbol;
 
+            
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (_seciliSymbol == null) return;
+            GetCoinInfo();
+        }
+
+        private void GetCoinInfo()
+        {
             try
             {
                 var result = new SymbolTickerService().Result(_seciliSymbol.symbol);
@@ -83,11 +94,9 @@ namespace MyCoin
                 lblFiyat.Text = $"{result.LowPrice}\n{result.PriceChangePercent / 100:P1}";
                 lblFiyat.ForeColor = result.PriceChange > 0 ? Color.LimeGreen : Color.Tomato;
                 lblInfo.Text = $"En düşük: {result.LowPrice} \nEn yüksek: {result.HighPrice}\nAçılış: {BinanceHelper.DataConverter(result.OpenTime)}\nKapanış: {BinanceHelper.DataConverter(result.CloseTime)}";
-
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show($"{ex.Message}");
             }
         }

@@ -56,5 +56,23 @@ namespace MyCoin
             }
 
         }
+
+        private Symbol _seciliSymbol;
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItem == null) return;
+            _seciliSymbol = listBox1.SelectedItem as Symbol;
+            try
+            {
+                var result = new SymbolTickerService().Result(_seciliSymbol.symbol);
+               
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show($"{ex.Message}");
+            }
+        }
     }
 }

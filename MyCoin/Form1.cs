@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyCoin.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,5 +18,10 @@ namespace MyCoin
             InitializeComponent();
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            var result = new ExchangeInfoService().Result();
+            Console.WriteLine();
+        }
     }
 }

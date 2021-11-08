@@ -12,19 +12,7 @@ namespace MyCoin.Models
         public long ServerTime { get; set; }
         public Ratelimit[] RateLimits { get; set; }
         public object[] ExchangeFilters { get; set; }
-        public List<Symbol> Symbols { get; set; }
-
-        public class Rootobject
-        {
-            
-        }
-
-      
-
-       
-
-       
-
+        public List<Symbol> Symbols { get; set; } = new List<Symbol>(); 
 
     }
 }

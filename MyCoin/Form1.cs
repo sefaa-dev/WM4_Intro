@@ -68,7 +68,7 @@ namespace MyCoin
                 var result = new SymbolTickerService().Result(_seciliSymbol.symbol);
                
             }
-            catch (Exception ex) 
+            catch (Exception ex)  
             {
 
                 MessageBox.Show($"{ex.Message}"); 

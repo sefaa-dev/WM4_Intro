@@ -31,6 +31,9 @@ namespace MyCoin
         {
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.txtAra = new System.Windows.Forms.TextBox();
+            this.lblSymbol = new System.Windows.Forms.Label();
+            this.lblFiyat = new System.Windows.Forms.Label();
+            this.lblInfo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBox1
@@ -52,11 +55,44 @@ namespace MyCoin
             this.txtAra.TextChanged += new System.EventHandler(this.txtAra_TextChanged);
             this.txtAra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAra_KeyPress);
             // 
+            // lblSymbol
+            // 
+            this.lblSymbol.AutoSize = true;
+            this.lblSymbol.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblSymbol.Location = new System.Drawing.Point(211, 65);
+            this.lblSymbol.Name = "lblSymbol";
+            this.lblSymbol.Size = new System.Drawing.Size(60, 20);
+            this.lblSymbol.TabIndex = 2;
+            this.lblSymbol.Text = "Symbol";
+            // 
+            // lblFiyat
+            // 
+            this.lblFiyat.AutoSize = true;
+            this.lblFiyat.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblFiyat.Location = new System.Drawing.Point(551, 65);
+            this.lblFiyat.Name = "lblFiyat";
+            this.lblFiyat.Size = new System.Drawing.Size(42, 20);
+            this.lblFiyat.TabIndex = 3;
+            this.lblFiyat.Text = "Fiyat";
+            // 
+            // lblInfo
+            // 
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblInfo.Location = new System.Drawing.Point(211, 198);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(36, 20);
+            this.lblInfo.TabIndex = 4;
+            this.lblInfo.Text = "Info";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblInfo);
+            this.Controls.Add(this.lblFiyat);
+            this.Controls.Add(this.lblSymbol);
             this.Controls.Add(this.txtAra);
             this.Controls.Add(this.listBox1);
             this.Name = "Form1";
@@ -71,6 +107,9 @@ namespace MyCoin
 
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox txtAra;
+        private System.Windows.Forms.Label lblSymbol;
+        private System.Windows.Forms.Label lblFiyat;
+        private System.Windows.Forms.Label lblInfo;
     }
 }
 

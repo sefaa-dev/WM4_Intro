@@ -1,5 +1,6 @@
 ﻿using MyCoin.Models;
 using MyCoin.Services;
+using MyCoin.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,12 +23,22 @@ namespace MyCoin
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            var result = new ExchangeInfoService().Result();
-            _symbols = result.Symbols;
-            _symbols = _symbols.Where(x => x.status == "TRADING").
-                OrderBy(x => x.symbol).
-                ToList();
 
+            try
+            {
+                var result = new ExchangeInfoService().Result();
+                _symbols = result.Symbols;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show($"{ex.Message}");
+            }
+
+            _symbols = _symbols.Where(x => x.status == "TRADING").
+                   OrderBy(x => x.symbol).
+                   ToList();
             listBox1.DataSource = _symbols;
             listBox1.DisplayMember = nameof(Symbol.symbol);
 
@@ -49,7 +60,7 @@ namespace MyCoin
                 this.Text = $"{_symbols.Count} Adet Coin Listelenmiştir";
             }
             else
-            {     
+            {
                 var result = _symbols.Where(x => x.symbol.Contains(txtAra.Text.ToUpper())).ToList();
                 listBox1.DataSource = result;
                 this.Text = $"{result.Count} Adet Coin Listelenmiştir";
@@ -63,15 +74,21 @@ namespace MyCoin
         {
             if (listBox1.SelectedItem == null) return;
             _seciliSymbol = listBox1.SelectedItem as Symbol;
+
             try
             {
                 var result = new SymbolTickerService().Result(_seciliSymbol.symbol);
-               
+
+                lblSymbol.Text = result.Symbol;
+                lblFiyat.Text = $"{result.LowPrice}\n{result.PriceChangePercent / 100:P1}";
+                lblFiyat.ForeColor = result.PriceChange > 0 ? Color.LimeGreen : Color.Tomato;
+                lblInfo.Text = $"En düşük: {result.LowPrice} \nEn yüksek: {result.HighPrice}\nAçılış: {BinanceHelper.DataConverter(result.OpenTime)}\nKapanış: {BinanceHelper.DataConverter(result.CloseTime)}";
+
             }
-            catch (Exception ex)  
+            catch (Exception ex)
             {
 
-                MessageBox.Show($"{ex.Message}"); 
+                MessageBox.Show($"{ex.Message}");
             }
         }
     }

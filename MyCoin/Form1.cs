@@ -49,7 +49,7 @@ namespace MyCoin
                 this.Text = $"{_symbols.Count} Adet Coin Listelenmiştir";
             }
             else
-            {    
+            {     
                 var result = _symbols.Where(x => x.symbol.Contains(txtAra.Text.ToUpper())).ToList();
                 listBox1.DataSource = result;
                 this.Text = $"{result.Count} Adet Coin Listelenmiştir";

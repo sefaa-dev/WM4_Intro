@@ -12,7 +12,7 @@ namespace MyCoin.Services
     public class ExchangeInfoService : IBinanceReq<BinanceReqExchangeBody>
     {
         public string BaseUrl { get; } = "https://api.binance.com/api/v3/exchangeInfo";
-        string IBinanceReq<BinanceReqExchangeBody>.BaseUrl { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+      
 
         public BinanceReqExchangeBody Result(string param = null)
         {

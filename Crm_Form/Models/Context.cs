@@ -18,7 +18,7 @@ namespace Crm_Form.Models
                 {
                     Ad = Faker.NameFaker.Name(),
                     SoyAd = Faker.NameFaker.LastName(),
-                    DogumTarihi = Faker.DateTimeFaker.DateTimeBetweenYears(1970, 2020),
+                    DogumTarihi = Faker.DateTimeFaker.BirthDay(),
                     Falan = Faker.NumberFaker.Number(1000, 9999)
                 });
 

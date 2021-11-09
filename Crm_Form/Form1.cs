@@ -78,5 +78,21 @@ namespace Crm_Form
 
             }
         }
+        FormKisiListele _formKisiListele;
+        private void listeleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+         
+                _formKisiListele = new FormKisiListele();
+            _formKisiListele.StartPosition = FormStartPosition.CenterScreen;
+                _formKisiListele.Kisiler = Kisiler;
+                var result = _formKisiListele.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    var seciliKisi = _formKisiListele.SeciliKisi;
+                    MessageBox.Show($"Seçili Kişi: {seciliKisi}");
+                }
+
+            }
+        }
     }
-}
+

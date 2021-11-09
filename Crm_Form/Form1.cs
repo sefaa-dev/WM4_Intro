@@ -40,5 +40,10 @@ namespace Crm_Form
             _frmIceriAktar.MdiParent = this;
             _frmIceriAktar.Show();
         }
+
+        private void Form1_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

@@ -9,35 +9,35 @@ using System.Threading.Tasks;
 
 namespace Cs.Lib.Concrete
 {
-    public sealed class M4A1S : Tufek
+    public sealed class M4a1s : Tufek
     {
-        public M4A1S()
+        public M4a1s()
         {
-            this._atisKatsayisi = 200;
-            this._sarjorKapasitesi = 20;
-            this._kalanFisek = this._sarjorKapasitesi;
-            this.Fiyat = 3100;
-            this.Hasar = 43;
+            this._atisKatsayisi = 100;
+            this._sarjorKapasitesi = 30;
+            this.Ulke = "Çin";
+            this.Hasar = 24;
+            this.Fiyat = 6700m;
+            this._kalanFisek = this.SarjorKapasitesi;
             this.SilahResim = new MemoryStream(Properties.Resources.M4A1S);
-            this.Ulke = "Amerika";
             this._atisSesi = Properties.Resources.M4A1_Ates;
             this._bitikFisekSesi = Properties.Resources.Bitik_Mermi_Sesi;
             this._yenidenDoldurmaSesi = Properties.Resources.M4A1_Reload;
         }
-
         public override int AtesEt()
         {
             if (KalanFisek != 0)
             {
                 this._kalanFisek--;
             }
+            Thread.Sleep(300);
             return this._kalanFisek;
         }
 
         public override int YenidenDoldur()
         {
             this._kalanFisek = this.SarjorKapasitesi;
-            Thread.Sleep(1200);
+            Thread.Sleep(1000);
             return KalanFisek;
         }
     }

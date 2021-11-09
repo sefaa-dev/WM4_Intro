@@ -9,40 +9,34 @@ using System.Threading.Tasks;
 
 namespace Cs.Lib.Concrete
 {
-    public sealed class USP : Tabanca
+    public sealed class Usp : Tabanca
     {
-        public USP()
+        public Usp()
         {
-            this.Fiyat = 200;
-            this.Ulke = "Almanya";
-            this._sarjorKapasitesi = 12;
-            this._kalanFisek = this._sarjorKapasitesi;
+            this._sarjorKapasitesi = 3;
+            this.Ulke = "ALmanya";
+            this.Hasar = 21;
+            this.Fiyat = 1400m;
+            this._kalanFisek = this.SarjorKapasitesi;
             this.SilahResim = new MemoryStream(Properties.Resources.USP);
-            this.Hasar = 35;
             this._atisSesi = Properties.Resources.USP_Ates;
             this._bitikFisekSesi = Properties.Resources.Bitik_Mermi_Sesi;
             this._yenidenDoldurmaSesi = Properties.Resources.USP_Reload;
         }
-
         public override int AtesEt()
-        {         
+        {
             if (KalanFisek != 0)
             {
-                Thread.Sleep(250);
                 this._kalanFisek--;
             }
-            else
-            {          
-                Thread.Sleep(100);
-            }
+            Thread.Sleep(300);
             return this._kalanFisek;
         }
 
         public override int YenidenDoldur()
         {
-        
-            Thread.Sleep(1125);
             this._kalanFisek = this.SarjorKapasitesi;
+            Thread.Sleep(1000);
             return KalanFisek;
         }
     }

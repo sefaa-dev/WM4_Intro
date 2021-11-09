@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Cs.Lib.Concrete
@@ -12,17 +13,16 @@ namespace Cs.Lib.Concrete
     {
         public FlashBombasi()
         {
-            this.Fiyat = 200;
-            this.Hasar = 0;
+            this.Fiyat = 550;
+            this.Hasar = 80;
+            this.Ulke = "İran";
             this.SilahResim = new MemoryStream(Properties.Resources.Flash);
-            this.Ulke = "Almanya";
         }
-
-
-
         public override int Firlat()
         {
-            throw new NotImplementedException();
+            this._bomba = Properties.Resources.Flashbang;
+            Thread.Sleep(500);
+            return Hasar;
         }
     }
 }

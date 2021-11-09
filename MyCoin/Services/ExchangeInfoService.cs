@@ -1,19 +1,14 @@
 ﻿using MyCoin.Models;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Threading.Tasks;
 
 namespace MyCoin.Services
 {
     public class ExchangeInfoService : IBinanceReq<BinanceReqExchangeBody>
     {
         public string BaseUrl { get; } = "https://api.binance.com/api/v3/exchangeInfo";
-      
-
         public BinanceReqExchangeBody Result(string param = null)
         {
             HttpClient client = new HttpClient();
@@ -33,7 +28,5 @@ namespace MyCoin.Services
                 throw;
             }
         }
-
     }
 }
-

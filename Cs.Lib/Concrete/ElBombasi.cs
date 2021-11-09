@@ -15,16 +15,12 @@ namespace Cs.Lib.Concrete
         {
             this.Fiyat = 350;
             this.Hasar = 80;
-            this.SilahResim = new MemoryStream(Properties.Resources.Bomba);
             this.Ulke = "Türkiye";
+            this.SilahResim = new MemoryStream(Properties.Resources.Bomba);
         }
-
-
-
         public override int Firlat()
         {
-           
-        
+            this._bomba = Properties.Resources.Bomb;
             Thread.Sleep(500);
             return Hasar;
         }

@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MyCoin.Models;
 
 namespace MyCoin.Services
-{   
-        public interface IBinanceReq<T> where T : class
-        {
-            string BaseUrl { get; }
-            T Result(string param);
-        }
+{
+    public interface IBinanceReq<T> where T : BinanceBase, new()
+    {
+        string BaseUrl { get; }
+        T Result(string param);
     }
-
+}

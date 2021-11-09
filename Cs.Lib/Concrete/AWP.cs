@@ -9,35 +9,34 @@ using System.Threading.Tasks;
 
 namespace Cs.Lib.Concrete
 {
-    public sealed class AWP : Tufek
+    public sealed class Awp : Tufek
     {
-        public AWP()
+        public Awp()
         {
-            this._atisKatsayisi = 1500;
-            this._sarjorKapasitesi = 10;
-            this._kalanFisek = this._sarjorKapasitesi;
-            this.Fiyat = 4750;
-            this.Hasar = 120;
+            this._atisKatsayisi = 100;
+            this._sarjorKapasitesi = 30;
+            this.Ulke = "Viyana";
+            this.Hasar = 24;
+            this.Fiyat = 6700m;
+            this._kalanFisek = this.SarjorKapasitesi;
             this.SilahResim = new MemoryStream(Properties.Resources.AWP);
-            this.Ulke = "İngiltere";
             this._atisSesi = Properties.Resources.AWP_Ates;
-            this._bitikFisekSesi = Properties.Resources.Bitik_Mermi_Sesi;
             this._yenidenDoldurmaSesi = Properties.Resources.Ak47_Reload;
         }
-
         public override int AtesEt()
         {
             if (KalanFisek != 0)
             {
                 this._kalanFisek--;
             }
+            Thread.Sleep(300);
             return this._kalanFisek;
         }
 
         public override int YenidenDoldur()
         {
             this._kalanFisek = this.SarjorKapasitesi;
-            Thread.Sleep(1200);
+            Thread.Sleep(1000);
             return KalanFisek;
         }
     }

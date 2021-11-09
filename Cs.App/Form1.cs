@@ -20,6 +20,7 @@ namespace Cs.App
         {
             cmbSilahlar.DataSource = Enum.GetNames(typeof(Silahlar));
             tmrSeri.Tick += TmrSeri_Tick;
+            SilahBilgisiGoster(silah);
         }
 
         private void TmrSeri_Tick(object sender, EventArgs e)
@@ -35,14 +36,20 @@ namespace Cs.App
             if (cmbSilahlar.SelectedItem == null) return;
 
             Silahlar seciliSilah = Enum.Parse<Silahlar>(cmbSilahlar.SelectedItem.ToString());
+         
 
             switch (seciliSilah)
             {
                 case Silahlar.Bıçak:
-                    silah = new Bicak();
-                    break;
+                    {
+                        silah = new Bicak();
+                        SoundPlayer player = new SoundPlayer((silah as IVurulabilir).BicakCıkarma);
+                        player.Play();
+                        break;
+                    }
+                    
                 case Silahlar.USP:
-                    silah = new USP();
+                    silah = new Usp();
                     break;
                 case Silahlar.Glock:
                     silah = new Glock();
@@ -54,10 +61,10 @@ namespace Cs.App
                     silah = new Ak47();
                     break;
                 case Silahlar.M4A1S:
-                    silah = new M4A1S();
+                    silah = new M4a1s();
                     break;
                 case Silahlar.AWP:
-                    silah = new AWP();
+                    silah = new Awp();
                     break;
                 case Silahlar.ElBombası:
                     silah = new ElBombasi();
@@ -92,14 +99,23 @@ namespace Cs.App
             PictureBox pbBox = new PictureBox();
             pbBox.Image = Image.FromStream(silah.SilahResim);
             pbBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            SilahBilgisiGoster(silah);
             pbBox.Dock = DockStyle.Fill;
             panelSilah.Controls.Add(pbBox);
         }
 
+
+        private void SilahBilgisiGoster(Silah silah)
+        {
+            lblDetay.Text = $"Ülke: {silah.Ulke}\nFiyat: {silah.Fiyat:c2}";
+            if (silah is ISarjorlu sarjorluSilahlar)
+                lblDurum.Text = $"{sarjorluSilahlar.KalanFisek}/{sarjorluSilahlar.SarjorKapasitesi}";
+        }
         private void btnAtesEt_Click(object sender, EventArgs e)
         {
             btnAtesEt.Enabled = false;
             IAtesEdebilen atesliSilah = silah as IAtesEdebilen;
+            SilahBilgisiGoster(silah);
             int sayi = atesliSilah.AtesEt();
             SoundPlayer player;
             if (sayi != 0)
@@ -120,6 +136,7 @@ namespace Cs.App
         {
             ISarjorlu atesliSilah = silah as ISarjorlu;
             atesliSilah.YenidenDoldur();
+            SilahBilgisiGoster(silah);
             SoundPlayer player = new SoundPlayer(atesliSilah.YenidenDoldurmaSesi);
             atesliSilah.YenidenDoldurmaSesi.Position = 0;
             player.Play();
@@ -145,17 +162,21 @@ namespace Cs.App
         private void btnSaldir_Click(object sender, EventArgs e)
         {
             btnSaldir.Enabled = false;
-            (silah as IVurulabilir).Vur();
-            ///
+            IVurulabilir vurulabilir = silah as IVurulabilir;
+            vurulabilir.Vur();
+            //(silah as IVurulabilir).Vur();
+            SoundPlayer player = new SoundPlayer(vurulabilir.BicakSaplama);
+            player.Play();
             btnSaldir.Enabled = true;
-            
         }
 
         private void btnFırlat_Click(object sender, EventArgs e)
         {
             btnFırlat.Enabled = false;
-            (silah as IFirlatilabilen).Firlat();
-            //////
+            IFirlatilabilen firlat = silah as IFirlatilabilen;
+            firlat.Firlat();
+            SoundPlayer player = new SoundPlayer(firlat.Bomba);
+            player.Play();
             btnFırlat.Enabled = true;
         }
     }

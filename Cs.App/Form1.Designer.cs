@@ -49,9 +49,9 @@
             // 
             this.gbFirlatilan.Controls.Add(this.btnFırlat);
             this.gbFirlatilan.Location = new System.Drawing.Point(406, 284);
-            this.gbFirlatilan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbFirlatilan.Margin = new System.Windows.Forms.Padding(4);
             this.gbFirlatilan.Name = "gbFirlatilan";
-            this.gbFirlatilan.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbFirlatilan.Padding = new System.Windows.Forms.Padding(4);
             this.gbFirlatilan.Size = new System.Drawing.Size(379, 116);
             this.gbFirlatilan.TabIndex = 14;
             this.gbFirlatilan.TabStop = false;
@@ -61,7 +61,7 @@
             // btnFırlat
             // 
             this.btnFırlat.Location = new System.Drawing.Point(8, 23);
-            this.btnFırlat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFırlat.Margin = new System.Windows.Forms.Padding(4);
             this.btnFırlat.Name = "btnFırlat";
             this.btnFırlat.Size = new System.Drawing.Size(98, 86);
             this.btnFırlat.TabIndex = 0;
@@ -73,9 +73,9 @@
             // 
             this.gbYakinSaldiri.Controls.Add(this.btnSaldir);
             this.gbYakinSaldiri.Location = new System.Drawing.Point(20, 284);
-            this.gbYakinSaldiri.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbYakinSaldiri.Margin = new System.Windows.Forms.Padding(4);
             this.gbYakinSaldiri.Name = "gbYakinSaldiri";
-            this.gbYakinSaldiri.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbYakinSaldiri.Padding = new System.Windows.Forms.Padding(4);
             this.gbYakinSaldiri.Size = new System.Drawing.Size(379, 116);
             this.gbYakinSaldiri.TabIndex = 15;
             this.gbYakinSaldiri.TabStop = false;
@@ -85,7 +85,7 @@
             // btnSaldir
             // 
             this.btnSaldir.Location = new System.Drawing.Point(8, 23);
-            this.btnSaldir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSaldir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSaldir.Name = "btnSaldir";
             this.btnSaldir.Size = new System.Drawing.Size(98, 86);
             this.btnSaldir.TabIndex = 0;
@@ -99,9 +99,9 @@
             this.gb_AtesliSilah.Controls.Add(this.btnAtesEt);
             this.gb_AtesliSilah.Controls.Add(this.btnYenidenDoldur);
             this.gb_AtesliSilah.Location = new System.Drawing.Point(20, 150);
-            this.gb_AtesliSilah.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gb_AtesliSilah.Margin = new System.Windows.Forms.Padding(4);
             this.gb_AtesliSilah.Name = "gb_AtesliSilah";
-            this.gb_AtesliSilah.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gb_AtesliSilah.Padding = new System.Windows.Forms.Padding(4);
             this.gb_AtesliSilah.Size = new System.Drawing.Size(379, 116);
             this.gb_AtesliSilah.TabIndex = 13;
             this.gb_AtesliSilah.TabStop = false;
@@ -125,7 +125,7 @@
             this.btnAtesEt.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAtesEt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnAtesEt.Location = new System.Drawing.Point(7, 22);
-            this.btnAtesEt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAtesEt.Margin = new System.Windows.Forms.Padding(4);
             this.btnAtesEt.Name = "btnAtesEt";
             this.btnAtesEt.Size = new System.Drawing.Size(98, 86);
             this.btnAtesEt.TabIndex = 6;
@@ -140,7 +140,7 @@
             this.btnYenidenDoldur.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnYenidenDoldur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnYenidenDoldur.Location = new System.Drawing.Point(112, 22);
-            this.btnYenidenDoldur.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnYenidenDoldur.Margin = new System.Windows.Forms.Padding(4);
             this.btnYenidenDoldur.Name = "btnYenidenDoldur";
             this.btnYenidenDoldur.Size = new System.Drawing.Size(98, 86);
             this.btnYenidenDoldur.TabIndex = 6;
@@ -175,7 +175,7 @@
             this.cmbSilahlar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSilahlar.FormattingEnabled = true;
             this.cmbSilahlar.Location = new System.Drawing.Point(99, 7);
-            this.cmbSilahlar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbSilahlar.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSilahlar.Name = "cmbSilahlar";
             this.cmbSilahlar.Size = new System.Drawing.Size(253, 23);
             this.cmbSilahlar.TabIndex = 10;
@@ -184,7 +184,7 @@
             // panelSilah
             // 
             this.panelSilah.Location = new System.Drawing.Point(515, 10);
-            this.panelSilah.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelSilah.Margin = new System.Windows.Forms.Padding(4);
             this.panelSilah.Name = "panelSilah";
             this.panelSilah.Size = new System.Drawing.Size(344, 255);
             this.panelSilah.TabIndex = 9;
@@ -201,7 +201,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbSilahlar);
             this.Controls.Add(this.panelSilah);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

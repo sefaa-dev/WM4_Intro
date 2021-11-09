@@ -1,19 +1,15 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
+using Newtonsoft.Json;
+using Formatting = Newtonsoft.Json.Formatting;
 
-namespace KisiEnvanteri
+namespace KisiEnvanter
 {
     public partial class Form1 : Form
     {
@@ -21,35 +17,29 @@ namespace KisiEnvanteri
         {
             InitializeComponent();
         }
-
-        List<Kisi> kisiler = new List<Kisi>();
+        
         private void ListeyiDoldur()
         {
             lstKisiler.Items.Clear();
-            foreach (Kisi kisi in kisiler)
+            foreach (Kisi kisi in KisiContext.Kisiler)
             {
                 lstKisiler.Items.Add(kisi);
             }
-            KisiContext.Save();
         }
-
-
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pbResim_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
             dialog.Multiselect = false;
-            dialog.Title = "Bir Foto Seçiniz";
+            dialog.Title = "Bir fotoğraf seçiniz";
             dialog.Filter = "Resim Dosyaları | *.jpeg; *.jpg";
             dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
             DialogResult result = dialog.ShowDialog();
             if (result == DialogResult.OK)
             {
                 pbResim.ImageLocation = dialog.FileName;
             }
         }
-
-
-
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             Kisi yeniKisi = new Kisi()
@@ -57,18 +47,18 @@ namespace KisiEnvanteri
                 Ad = txtAd.Text,
                 Soyad = txtSoyad.Text,
                 DogumTarihi = dtpDogumTarihi.Value,
-                Telefon = txtTelefon.Text,
+                Telefon = txtTelefon.Text
             };
             if (pbResim.Image != null)
             {
                 MemoryStream resimStream = new MemoryStream();
-
                 pbResim.Image.Save(resimStream, ImageFormat.Jpeg);
 
                 yeniKisi.Fotograf = resimStream.ToArray();
             }
-            kisiler.Add(yeniKisi);
+            KisiContext.Kisiler.Add(yeniKisi);
             ListeyiDoldur();
+            KisiContext.Save();
         }
 
         private Kisi seciliKisi;
@@ -89,10 +79,8 @@ namespace KisiEnvanteri
                 pbResim.Image = Image.FromStream(stream);
             }
         }
-
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-
             seciliKisi.Ad = txtAd.Text;
             seciliKisi.Soyad = txtSoyad.Text;
             seciliKisi.Telefon = txtTelefon.Text;
@@ -103,16 +91,15 @@ namespace KisiEnvanteri
                 pbResim.Image.Save(resimStream, ImageFormat.Jpeg);
 
                 seciliKisi.Fotograf = resimStream.ToArray();
-
             }
             ListeyiDoldur();
-
+            KisiContext.Save();
         }
 
         private void dışarıAktarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog dialog = new SaveFileDialog();
-            dialog.Title = "Dışarı Aktar";
+            dialog.Title = "Dışarı aktar";
             dialog.Filter = "XML Format | *.xml";
             dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
@@ -121,13 +108,10 @@ namespace KisiEnvanteri
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(List<Kisi>));
                 TextWriter writer = new StreamWriter(dialog.FileName);
-                serializer.Serialize(writer, kisiler);
+                serializer.Serialize(writer, KisiContext.Kisiler);
                 writer.Close();
-                MessageBox.Show($"{kisiler.Count} adet kisi dışarı aktarıldı.");
-
-
+                MessageBox.Show($"{KisiContext.Kisiler.Count} adet kişi dışarı aktarıldı.");
             }
-
         }
 
         private void içeriAktarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -143,8 +127,8 @@ namespace KisiEnvanteri
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(List<Kisi>));
                 XmlTextReader reader = new XmlTextReader(dialog.FileName);
-                kisiler = (List<Kisi>)serializer.Deserialize(reader);
-                MessageBox.Show($"{kisiler.Count} adet kisi içeri aktarıldı");
+                KisiContext.Kisiler = (List<Kisi>)serializer.Deserialize(reader);
+                MessageBox.Show($"{KisiContext.Kisiler.Count} adet kişi içeri aktarıldı");
                 ListeyiDoldur();
             }
         }
@@ -152,7 +136,7 @@ namespace KisiEnvanteri
         private void jSONDışarıAktarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog dialog = new SaveFileDialog();
-            dialog.Title = "Dışarı Aktar";
+            dialog.Title = "Dışarı aktar";
             dialog.Filter = "JSON Format | *.json";
             dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
@@ -161,11 +145,10 @@ namespace KisiEnvanteri
             {
                 FileStream fileStream = new FileStream(dialog.FileName, FileMode.OpenOrCreate);
                 StreamWriter writer = new StreamWriter(fileStream);
-                writer.Write(JsonConvert.SerializeObject(kisiler));
+                writer.Write(JsonConvert.SerializeObject(KisiContext.Kisiler, Formatting.Indented));
                 writer.Close();
                 writer.Dispose();
-                MessageBox.Show($"{kisiler.Count} adet kişi dışarı aktarıldı");
-
+                MessageBox.Show($"{KisiContext.Kisiler.Count} adet kişi dışarı aktarıldı.");
             }
         }
 
@@ -183,9 +166,8 @@ namespace KisiEnvanteri
                 FileStream fileStream = new FileStream(dialog.FileName, FileMode.Open);
                 StreamReader reader = new StreamReader(fileStream);
                 string dosyaIcerigi = reader.ReadToEnd();
-                kisiler = JsonConvert.DeserializeObject<List<Kisi>>(dosyaIcerigi);
-
-                MessageBox.Show($"{kisiler.Count} adet kisi içeri aktarıldı");
+                KisiContext.Kisiler = JsonConvert.DeserializeObject<List<Kisi>>(dosyaIcerigi);
+                MessageBox.Show($"{KisiContext.Kisiler.Count} adet kişi içeri aktarıldı");
                 ListeyiDoldur();
             }
         }
@@ -193,7 +175,6 @@ namespace KisiEnvanteri
         private void Form1_Load(object sender, EventArgs e)
         {
             KisiContext.Load();
-            this.kisiler = KisiContext.Kisiler;
             ListeyiDoldur();
         }
     }

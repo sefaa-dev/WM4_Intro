@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace KisiEnvanteri
+namespace KisiEnvanter
 {
     public class Kisi
     {
@@ -15,6 +11,5 @@ namespace KisiEnvanteri
         public byte[] Fotograf { get; set; }
 
         public override string ToString() => $"{Ad} {Soyad}";
-        
     }
 }

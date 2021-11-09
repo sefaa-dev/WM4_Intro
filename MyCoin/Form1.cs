@@ -72,7 +72,7 @@ namespace MyCoin
         private Symbol _seciliSymbol;
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        { 
+        {  
             if (listBox1.SelectedItem == null) return;
             _seciliSymbol = listBox1.SelectedItem as Symbol;
 

@@ -1,39 +1,34 @@
 ﻿using Crm_Form.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Crm_Form.Formlar
 {
-    public partial class FormKisiListele : Form
+    public partial class FrmKisiListele : Form
     {
-        public FormKisiListele()
+        public FrmKisiListele()
         {
             InitializeComponent();
+        }
+        public List<Kisi> Kisiler { get; set; }
+        private void FrmKisiListele_Load(object sender, EventArgs e)
+        {
+            lstKisiler.DataSource = Kisiler;
         }
         public Kisi SeciliKisi { get; set; }
         private void lstKisiler_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lstKisiler.SelectedItem == null) return;
+
             SeciliKisi = lstKisiler.SelectedItem as Kisi;
-        }
-        public List<Kisi> Kisiler { get; set; }
-        private void FormKisiListele_Load(object sender, EventArgs e)
-        {
-            lstKisiler.DataSource = Kisiler;
         }
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            if(SeciliKisi == null)
+            if (SeciliKisi == null)
             {
-                MessageBox.Show("Bir Kişi Seçmediniz");
+                MessageBox.Show("Bir kişi seçmediniz");
                 return;
             }
             this.DialogResult = DialogResult.OK;
@@ -47,7 +42,7 @@ namespace Crm_Form.Formlar
                 MessageBox.Show("Bir kişi seçmediniz");
                 return;
             }
-            var result = MessageBox.Show($"{SeciliKisi} kişisini silmek istiyor musunuz? ", "Kişi Sil", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var result = MessageBox.Show($"{SeciliKisi} kişisini silmek istiyor musunuz?", "Kişi sil", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
@@ -55,6 +50,7 @@ namespace Crm_Form.Formlar
                 lstKisiler.SelectedIndex = -1;
                 lstKisiler.DataSource = null;
                 lstKisiler.DataSource = Kisiler;
+                //lstKisiler.;
                 SeciliKisi = null;
             }
         }

@@ -1,7 +1,6 @@
-﻿
-namespace Crm_Form.Formlar
+﻿namespace Crm_Form.Formlar
 {
-    partial class FormKisiListele
+    partial class FrmKisiListele
     {
         /// <summary>
         /// Required designer variable.
@@ -41,18 +40,18 @@ namespace Crm_Form.Formlar
             // 
             this.lstKisiler.ContextMenuStrip = this.contextMenuStrip1;
             this.lstKisiler.FormattingEnabled = true;
-            this.lstKisiler.ItemHeight = 15;
-            this.lstKisiler.Location = new System.Drawing.Point(37, 12);
+            this.lstKisiler.ItemHeight = 20;
+            this.lstKisiler.Location = new System.Drawing.Point(12, 12);
             this.lstKisiler.Name = "lstKisiler";
-            this.lstKisiler.Size = new System.Drawing.Size(189, 349);
+            this.lstKisiler.Size = new System.Drawing.Size(325, 604);
             this.lstKisiler.TabIndex = 0;
             this.lstKisiler.SelectedIndexChanged += new System.EventHandler(this.lstKisiler_SelectedIndexChanged);
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(37, 384);
+            this.btnOk.Location = new System.Drawing.Point(12, 622);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(189, 43);
+            this.btnOk.Size = new System.Drawing.Size(325, 61);
             this.btnOk.TabIndex = 1;
             this.btnOk.Text = "Seç";
             this.btnOk.UseVisualStyleBackColor = true;
@@ -60,31 +59,32 @@ namespace Crm_Form.Formlar
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.silToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(87, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(95, 28);
             // 
             // silToolStripMenuItem
             // 
             this.silToolStripMenuItem.Name = "silToolStripMenuItem";
-            this.silToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(94, 24);
             this.silToolStripMenuItem.Text = "Sil";
             this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
             // 
-            // FormKisiListele
+            // FrmKisiListele
             // 
             this.AcceptButton = this.btnOk;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(401, 462);
+            this.ClientSize = new System.Drawing.Size(352, 695);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.lstKisiler);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.Name = "FormKisiListele";
-            this.Text = "FormKisiListele";
-            this.Load += new System.EventHandler(this.FormKisiListele_Load);
+            this.Name = "FrmKisiListele";
+            this.Text = "FrmKisiListele";
+            this.Load += new System.EventHandler(this.FrmKisiListele_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 

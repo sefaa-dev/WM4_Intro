@@ -35,7 +35,7 @@ namespace Crm_Form
             this.içeriAktarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.görünümToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.temaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kisiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kişiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ekleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.güncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listeleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,11 +48,10 @@ namespace Crm_Form
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dosyaToolStripMenuItem,
             this.görünümToolStripMenuItem,
-            this.kisiToolStripMenuItem});
+            this.kişiToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(521, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(940, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -62,20 +61,20 @@ namespace Crm_Form
             this.dışarıAktarToolStripMenuItem,
             this.içeriAktarToolStripMenuItem});
             this.dosyaToolStripMenuItem.Name = "dosyaToolStripMenuItem";
-            this.dosyaToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.dosyaToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
             this.dosyaToolStripMenuItem.Text = "&Dosya";
             // 
             // dışarıAktarToolStripMenuItem
             // 
             this.dışarıAktarToolStripMenuItem.Name = "dışarıAktarToolStripMenuItem";
-            this.dışarıAktarToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.dışarıAktarToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.dışarıAktarToolStripMenuItem.Text = "&Dışarı Aktar";
             this.dışarıAktarToolStripMenuItem.Click += new System.EventHandler(this.dışarıAktarToolStripMenuItem_Click);
             // 
             // içeriAktarToolStripMenuItem
             // 
             this.içeriAktarToolStripMenuItem.Name = "içeriAktarToolStripMenuItem";
-            this.içeriAktarToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.içeriAktarToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.içeriAktarToolStripMenuItem.Text = "İçeri &Aktar";
             this.içeriAktarToolStripMenuItem.Click += new System.EventHandler(this.içeriAktarToolStripMenuItem_Click);
             // 
@@ -84,55 +83,54 @@ namespace Crm_Form
             this.görünümToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.temaToolStripMenuItem});
             this.görünümToolStripMenuItem.Name = "görünümToolStripMenuItem";
-            this.görünümToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.görünümToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
             this.görünümToolStripMenuItem.Text = "&Görünüm";
             // 
             // temaToolStripMenuItem
             // 
             this.temaToolStripMenuItem.Name = "temaToolStripMenuItem";
-            this.temaToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.temaToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
             this.temaToolStripMenuItem.Text = "&Tema";
             // 
-            // kisiToolStripMenuItem
+            // kişiToolStripMenuItem
             // 
-            this.kisiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.kişiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ekleToolStripMenuItem,
             this.güncelleToolStripMenuItem,
             this.listeleToolStripMenuItem});
-            this.kisiToolStripMenuItem.Name = "kisiToolStripMenuItem";
-            this.kisiToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.kisiToolStripMenuItem.Text = "Kisi";
+            this.kişiToolStripMenuItem.Name = "kişiToolStripMenuItem";
+            this.kişiToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.kişiToolStripMenuItem.Text = "Kişi";
             // 
             // ekleToolStripMenuItem
             // 
             this.ekleToolStripMenuItem.Name = "ekleToolStripMenuItem";
-            this.ekleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ekleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.ekleToolStripMenuItem.Text = "Ekle";
             this.ekleToolStripMenuItem.Click += new System.EventHandler(this.ekleToolStripMenuItem_Click);
             // 
             // güncelleToolStripMenuItem
             // 
             this.güncelleToolStripMenuItem.Name = "güncelleToolStripMenuItem";
-            this.güncelleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.güncelleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.güncelleToolStripMenuItem.Text = "Güncelle";
             this.güncelleToolStripMenuItem.Click += new System.EventHandler(this.güncelleToolStripMenuItem_Click);
             // 
             // listeleToolStripMenuItem
             // 
             this.listeleToolStripMenuItem.Name = "listeleToolStripMenuItem";
-            this.listeleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listeleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.listeleToolStripMenuItem.Text = "Listele";
             this.listeleToolStripMenuItem.Click += new System.EventHandler(this.listeleToolStripMenuItem_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 331);
+            this.ClientSize = new System.Drawing.Size(940, 621);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -153,7 +151,7 @@ namespace Crm_Form
         private System.Windows.Forms.ToolStripMenuItem içeriAktarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem görünümToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem temaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem kisiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kişiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ekleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem güncelleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listeleToolStripMenuItem;

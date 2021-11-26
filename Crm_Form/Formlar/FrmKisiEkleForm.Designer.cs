@@ -1,7 +1,7 @@
 ﻿
 namespace Crm_Form.Formlar
 {
-    partial class KisiEkle
+    partial class FrmKisiEkleForm
     {
         /// <summary>
         /// Required designer variable.
@@ -34,22 +34,22 @@ namespace Crm_Form.Formlar
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(283, 147);
+            this.button1.Location = new System.Drawing.Point(91, 101);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 122);
+            this.button1.Size = new System.Drawing.Size(147, 74);
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // KisiEkle
+            // FrmKisiEkleForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(694, 456);
             this.Controls.Add(this.button1);
-            this.Name = "KisiEkle";
-            this.Text = "KisiEkle";
+            this.Name = "FrmKisiEkleForm";
+            this.Text = "FrmKisiEkleForm";
             this.ResumeLayout(false);
 
         }

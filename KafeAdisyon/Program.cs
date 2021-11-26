@@ -1,8 +1,10 @@
-using Crm_Form.Formlar;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Crm_Form
+namespace KafeAdisyon
 {
     static class Program
     {
@@ -15,7 +17,7 @@ namespace Crm_Form
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmLoginForm());
+            Application.Run(new Form1());
         }
     }
 }

@@ -45,8 +45,7 @@ namespace Crm_Form
             _frmIceriAktar.Show();
         }
 
-        public List<Kisi> Kisiler { get; set;}
-
+        public List<Kisi> Kisiler { get; set; }
         private void Form1_Load(object sender, System.EventArgs e)
         {
             var context = new Context();
@@ -54,15 +53,14 @@ namespace Crm_Form
             Console.WriteLine();
         }
 
-        private KisiEkle _kisiEkle; 
+        private FrmKisiEkleForm _frmKisiEkle;
         private void ekleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (_kisiEkle == null || _kisiEkle.IsDisposed)
+            if (_frmKisiEkle == null || _frmKisiEkle.IsDisposed)
             {
-                _kisiEkle = new KisiEkle();
-                _kisiEkle.MdiParent = this;
-                _kisiEkle.Show();
-
+                _frmKisiEkle = new FrmKisiEkleForm();
+                _frmKisiEkle.MdiParent = this;
+                _frmKisiEkle.Show();
             }
         }
 
@@ -73,26 +71,25 @@ namespace Crm_Form
             {
                 _frmKisiGuncelle = new FrmKisiGuncelle();
                 _frmKisiGuncelle.MdiParent = this;
+                _frmKisiGuncelle.StartPosition = FormStartPosition.CenterParent;
                 _frmKisiGuncelle.Kisi = Kisiler.Last();
                 _frmKisiGuncelle.Show();
-
             }
         }
-        FormKisiListele _formKisiListele;
+        FrmKisiListele _frmKisiListele;
         private void listeleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-         
-                _formKisiListele = new FormKisiListele();
-            _formKisiListele.StartPosition = FormStartPosition.CenterScreen;
-                _formKisiListele.Kisiler = Kisiler;
-                var result = _formKisiListele.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    var seciliKisi = _formKisiListele.SeciliKisi;
-                    MessageBox.Show($"Seçili Kişi: {seciliKisi}");
-                }
-
+            //https://stackoverflow.com/questions/5233502/how-to-return-a-value-from-a-form-in-c
+            _frmKisiListele = new FrmKisiListele();
+            //_frmKisiListele.MdiParent = this;
+            _frmKisiListele.StartPosition = FormStartPosition.CenterScreen;
+            _frmKisiListele.Kisiler = Kisiler;
+            var result = _frmKisiListele.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                var seciliKisi = _frmKisiListele.SeciliKisi;
+                MessageBox.Show($"Seçili kişi: {seciliKisi}");
             }
         }
     }
-
+}
